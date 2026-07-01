@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.documentElement.classList.replace('no-js', 'js');
+      // Safety net: if the Motion CDN script hangs or never fires load/error
+      // (slow network, blocked domain), force content visible after 2.5s
+      // instead of leaving it hidden indefinitely.
+      setTimeout(function () {
+        if (!window.__motionReady) document.documentElement.classList.add('motion-failed');
+      }, 2500);
+    </script>
+
+    <title>Parakkat Nature Resort &mdash; Menu</title>
+    <meta name="description" content="View or download the restaurant and room service menus for Parakkat Nature Resort." />
+
+    <!-- Google Fonts: Playfair Display for headings, Poppins for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+    />
 
     <!-- Bootstrap css links  -->
     <link
@@ -12,73 +32,130 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <noscript><style>[data-animate]{opacity:1 !important;transform:none !important;}</style></noscript>
   </head>
   <body>
-    <div style="height: 100vh">
-      <header
-        style="
-          height: 12%;
-          background-color: #333;
-          color: #fff;
-          font-size: 190%;
-          padding-top: 1vh;
-        "
-        class="d-flex justify-content-center"
-      >
-        <img src="./logo parakkat.png">
-      </header>
-      <section
-        class="d-flex flex-column justify-content-center"
-        style="margin-top: 20%;margin-bottom: 20%;"
-      >
-        <a
-          class="btn btn-secondary"
-          style="margin-bottom: 5%; margin-left: 15%; margin-right: 15%;background-color: #418843;"
-          href="./NEW MENU PARAKKAT NATURE RESORT COMPRESSED.pdf"
-            download=""
-        >
-          Restaurant Menu
-        </a>
-        <a
-          class="btn btn-secondary"
-          style="margin-bottom: 5%; margin-left: 15%; margin-right: 15%;background-color: #418843"
-          href="./ROOM SERVICE MENU PARAKKAT.pdf"
-            download=""
-        >
-          Room Service Menu
-        </a>
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img src="./logo parakkat.png" class="hero-logo" data-animate="fade-down" alt="Parakkat Nature Resort logo" />
+        <p class="hero-tagline" data-animate="fade-up">View or download our restaurant &amp; room service menus</p>
+        <a href="#menu" class="btn btn-primary hero-cta" data-animate="fade-up">View Our Menu</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Menu: the main purpose of this page -->
+      <section id="menu" class="menu-section">
+        <h2 class="section-heading" data-animate="fade-up">Our Menus</h2>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-5 mb-4">
+              <div class="menu-card" data-animate="fade-up">
+                <h3>Restaurant Menu</h3>
+                <p>Our full dining menu, available to view or download.</p>
+                <div class="menu-card-actions">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#pdfModal"
+                    data-pdf-src="./NEW MENU PARAKKAT NATURE RESORT COMPRESSED.pdf"
+                    data-pdf-title="Restaurant Menu"
+                  >
+                    View Menu
+                  </button>
+                  <a class="btn btn-outline-primary" href="./NEW MENU PARAKKAT NATURE RESORT COMPRESSED.pdf" download>
+                    Download
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 mb-4">
+              <div class="menu-card" data-animate="fade-up">
+                <h3>Room Service Menu</h3>
+                <p>Order to your room &mdash; view or download the menu.</p>
+                <div class="menu-card-actions">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#pdfModal"
+                    data-pdf-src="./ROOM SERVICE MENU PARAKKAT.pdf"
+                    data-pdf-title="Room Service Menu"
+                  >
+                    View Menu
+                  </button>
+                  <a class="btn btn-outline-primary" href="./ROOM SERVICE MENU PARAKKAT.pdf" download>
+                    Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-<div style="width: 100vw;">
-  <img src="./resort/5984bcea-eb23-4cde-bb90-237052851627.JPG" style="width: 100vw;" alt="">
-  <img src="./resort/2decbb6c-00a1-46c9-aa38-3d626719a02b.JPG" style="width: 100vw;" alt="">
-  <img src="./resort/2decbb6c-00a1-46c9-aa38-3d626719a02b.JPG" style="width: 100vw;" alt="">
-</div>
+
+      <!-- Gallery -->
+      <section id="gallery" class="gallery-section">
+        <h2 class="section-heading" data-animate="fade-up">A Glimpse of Parakkat</h2>
+        <div class="container-fluid">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="./resort/5984bcea-eb23-4cde-bb90-237052851627.JPG"
+                class="gallery-photo"
+                data-animate="fade-up"
+                loading="lazy"
+                alt="Parakkat Nature Resort treehouse cottage exterior"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="./resort/2decbb6c-00a1-46c9-aa38-3d626719a02b.JPG"
+                class="gallery-photo"
+                data-animate="fade-up"
+                loading="lazy"
+                alt="Parakkat Nature Resort cave-themed room interior"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="./resort/25026a06-8f3a-4056-91ab-a9f5d87bd305.JPG"
+                class="gallery-photo"
+                data-animate="fade-up"
+                loading="lazy"
+                alt="Parakkat Nature Resort grotto cottage detail"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; Parakkat Nature Resort</p>
+    </footer>
+
+    <!-- Shared PDF viewer modal -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title mr-auto" id="pdfModalLabel">Menu</h5>
+            <a href="#" class="btn btn-outline-primary btn-sm ml-3 mr-2" id="pdfModalDownload" download>Download</a>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body p-0">
+            <iframe id="pdfModalFrame" class="pdf-frame" title="Menu PDF viewer"></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Menu files  -->
-    <!-- <img class="w-100" src="./1.jpg" alt="" />
-    <img class="w-100" src="./2.jpg" alt="" />
-    <img class="w-100" src="./3.jpg" alt="" />
-    <img class="w-100" src="./4.jpg" alt="" />
-    <img class="w-100" src="./5.jpg" alt="" />
-    <img class="w-100" src="./6.jpg" alt="" />
-    <img class="w-100" src="./7.jpg" alt="" />
-    <img class="w-100" src="./8.jpg" alt="" />
-    <img class="w-100" src="./9.jpg" alt="" />
-    <img class="w-100" src="./10.jpg" alt="" />
-    <img class="w-100" src="./11.jpg" alt="" />
-    <img class="w-100" src="./12.jpg" alt="" />
-    <img class="w-100" src="./13.jpg" alt="" />
-    <img class="w-100" src="./14.jpg" alt="" />
-    <img class="w-100" src="./15.jpg" alt="" />
-    <img class="w-100" src="./16.jpg" alt="" /> -->
-    <!-- <img class="w-100" src="./17.jpg" alt="" />
-    <img class="w-100" src="./18.jpg" alt="" />
-    <img class="w-100" src="./19.jpg" alt="" />
-    <img class="w-100" src="./20.jpg" alt="" />
-    <img class="w-100" src="./21.jpg" alt="" />
-    <img class="w-100" src="./22.jpg" alt="" />
-    <img class="w-100" src="./23.jpg" alt="" /> -->
 
     <!-- Bootstrap js CDN  -->
     <script
@@ -96,5 +173,16 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Motion (motion.dev) for entrance/hover/scroll animations -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/motion@12.42.2/dist/motion.js"
+      integrity="sha384-p+WovuwtYq6f9M+xAShbw1ezxLg19kVWrem9y5k83ml8eFg4X6VEBqgQP+ERcjOk"
+      crossorigin="anonymous"
+      defer
+      onerror="document.documentElement.classList.add('motion-failed')"
+    ></script>
+    <script src="./motion-init.js" defer></script>
+    <script src="./pdf-modal.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,216 @@
+:root {
+  --color-primary: #418843;
+  --color-primary-dark: #336a35;
+  --color-dark: #222222;
+  --color-cream: #faf8f2;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("./resort/5984bcea-eb23-4cde-bb90-237052851627.JPG") center center / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.hero-logo {
+  max-width: 240px;
+  width: 60vw;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+.hero-tagline {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta {
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  border-radius: 50px;
+}
+
+/* ---------- Buttons (brand colors) ---------- */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ---------- Section heading ---------- */
+.section-heading {
+  font-family: var(--font-heading);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: 0.75rem auto 0;
+}
+
+/* ---------- Menu section ---------- */
+.menu-section {
+  padding: 5rem 0;
+  background: var(--color-cream);
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+.menu-card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+.menu-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.menu-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Gallery section ---------- */
+.gallery-section {
+  padding: 5rem 0 0;
+  background: #fff;
+}
+.gallery-section .container-fluid {
+  padding: 0;
+}
+.gallery-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.gallery-photo:hover {
+  transform: scale(1.04);
+}
+.gallery-section .col-md-4 {
+  overflow: hidden;
+  padding: 0;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-dark);
+  color: #ddd;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+}
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- PDF viewer modal ---------- */
+#pdfModal .modal-header {
+  align-items: center;
+}
+.pdf-frame {
+  width: 100%;
+  height: 80vh;
+  border: 0;
+  display: block;
+}
+
+/* ---------- Motion FOUC guard ---------- */
+/* [data-animate] elements start hidden/offset so they don't flash fully
+   visible before Motion's entrance animation runs. Scoped to .js (only set
+   once JS actually executes), so no-JS visitors see the normal, fully
+   visible page via the .no-js rule below. */
+.js [data-animate] {
+  opacity: 0;
+}
+.js [data-animate="fade-down"] {
+  transform: translateY(-24px);
+}
+.js [data-animate="fade-up"] {
+  transform: translateY(24px);
+}
+
+/* Safety net: JS disabled, Motion CDN failed to load, or the visitor
+   prefers reduced motion. Always wins by source order (equal specificity
+   to the rules above), keeping content visible no matter what. */
+.no-js [data-animate],
+.motion-failed [data-animate],
+.no-motion [data-animate] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  .hero-logo {
+    max-width: 180px;
+  }
+  .menu-card-actions {
+    flex-direction: column;
+  }
+  .gallery-photo {
+    height: 260px;
+  }
+}
