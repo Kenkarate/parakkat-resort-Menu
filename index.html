@@ -151,6 +151,7 @@
             </button>
           </div>
           <div class="modal-body p-0">
+            <div id="pdfModalPages" class="pdf-pages" aria-live="polite"></div>
             <iframe id="pdfModalFrame" class="pdf-frame" title="Menu PDF viewer"></iframe>
           </div>
         </div>
@@ -183,6 +184,17 @@
       onerror="document.documentElement.classList.add('motion-failed')"
     ></script>
     <script src="./motion-init.js" defer></script>
+
+    <!-- pdf.js renders the menu PDFs page-by-page inside the modal; mobile
+         browsers can't display raw PDFs in an iframe (iOS expands the iframe
+         to the PDF's full size, overflowing the screen). If this CDN script
+         fails to load, pdf-modal.js falls back to the plain iframe viewer. -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"
+      integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <script src="./pdf-modal.js" defer></script>
   </body>
 </html>
