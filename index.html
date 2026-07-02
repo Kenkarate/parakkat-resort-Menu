@@ -57,16 +57,14 @@
                 <h3>Restaurant Menu</h3>
                 <p>Our full dining menu, available to view or download.</p>
                 <div class="menu-card-actions">
-                  <button
-                    type="button"
+                  <a
                     class="btn btn-primary"
-                    data-toggle="modal"
-                    data-target="#pdfModal"
-                    data-pdf-src="./NEW MENU PARAKKAT NATURE RESORT COMPRESSED.pdf"
-                    data-pdf-title="Restaurant Menu"
+                    href="./NEW MENU PARAKKAT NATURE RESORT COMPRESSED.pdf"
+                    target="_blank"
+                    rel="noopener"
                   >
                     View Menu
-                  </button>
+                  </a>
                   <a class="btn btn-outline-primary" href="./NEW MENU PARAKKAT NATURE RESORT COMPRESSED.pdf" download>
                     Download
                   </a>
@@ -78,16 +76,9 @@
                 <h3>Room Service Menu</h3>
                 <p>Order to your room &mdash; view or download the menu.</p>
                 <div class="menu-card-actions">
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-toggle="modal"
-                    data-target="#pdfModal"
-                    data-pdf-src="./ROOM SERVICE MENU PARAKKAT.pdf"
-                    data-pdf-title="Room Service Menu"
-                  >
+                  <a class="btn btn-primary" href="./ROOM SERVICE MENU PARAKKAT.pdf" target="_blank" rel="noopener">
                     View Menu
-                  </button>
+                  </a>
                   <a class="btn btn-outline-primary" href="./ROOM SERVICE MENU PARAKKAT.pdf" download>
                     Download
                   </a>
@@ -139,25 +130,6 @@
       <p>&copy; Parakkat Nature Resort</p>
     </footer>
 
-    <!-- Shared PDF viewer modal -->
-    <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title mr-auto" id="pdfModalLabel">Menu</h5>
-            <a href="#" class="btn btn-outline-primary btn-sm ml-3 mr-2" id="pdfModalDownload" download>Download</a>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body p-0">
-            <div id="pdfModalPages" class="pdf-pages" aria-live="polite"></div>
-            <iframe id="pdfModalFrame" class="pdf-frame" title="Menu PDF viewer"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Bootstrap js CDN  -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -184,17 +156,5 @@
       onerror="document.documentElement.classList.add('motion-failed')"
     ></script>
     <script src="./motion-init.js" defer></script>
-
-    <!-- pdf.js renders the menu PDFs page-by-page inside the modal; mobile
-         browsers can't display raw PDFs in an iframe (iOS expands the iframe
-         to the PDF's full size, overflowing the screen). If this CDN script
-         fails to load, pdf-modal.js falls back to the plain iframe viewer. -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"
-      integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="./pdf-modal.js" defer></script>
   </body>
 </html>
