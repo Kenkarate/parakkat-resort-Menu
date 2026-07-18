@@ -14,15 +14,16 @@
       }, 2500);
     </script>
 
-    <title>Parakkat Nature Resort &mdash; Menu</title>
+    <title>Parakkat Nature Resort &mdash; Menus &amp; Spa Brochure</title>
     <meta name="description" content="View or download the restaurant menu, room service menu, and Ayurvedic spa brochure for Parakkat Nature Resort." />
+    <meta name="theme-color" content="#2c5e34" />
 
     <!-- Google Fonts: Playfair Display for headings, Poppins for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap"
     />
 
     <!-- Bootstrap css links  -->
@@ -40,20 +41,51 @@
     <header class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
+        <p class="hero-eyebrow" data-animate="fade-down">Welcome to</p>
         <img src="./logo parakkat.png" class="hero-logo" data-animate="fade-down" alt="Parakkat Nature Resort logo" />
         <p class="hero-tagline" data-animate="fade-up">View or download our menus &amp; Ayurvedic spa brochure</p>
-        <a href="#menu" class="btn btn-primary hero-cta" data-animate="fade-up">View Our Menu</a>
+        <a href="#menu" class="btn btn-primary hero-cta" data-animate="fade-up">Explore Our Menus</a>
       </div>
+      <a href="#welcome" class="scroll-indicator" aria-label="Scroll down">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </a>
     </header>
 
     <main>
+      <!-- Welcome / intro band -->
+      <!-- <section id="welcome" class="welcome-section">
+        <div class="container">
+          <div class="welcome-inner" data-animate="fade-up">
+            <p class="section-eyebrow">Parakkat Nature Resort</p>
+            <h2 class="welcome-heading">A restful escape, thoughtfully served</h2>
+            <span class="divider" aria-hidden="true"></span>
+            <p class="welcome-copy">
+              Everything you need for an unhurried stay in one place &mdash; carefully prepared cuisine,
+              in-room dining at your convenience, and rejuvenating Ayurvedic spa rituals. Browse or
+              download whichever you like below.
+            </p>
+          </div>
+        </div>
+      </section> -->
+
       <!-- Menu: the main purpose of this page -->
       <section id="menu" class="menu-section">
-        <h2 class="section-heading" data-animate="fade-up">Our Menus</h2>
         <div class="container">
+          <p class="section-eyebrow" data-animate="fade-up">Discover</p>
+          <h2 class="section-heading" data-animate="fade-up">Menus &amp; Brochure</h2>
           <div class="row justify-content-center">
-            <div class="col-md-4 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4">
               <div class="menu-card" data-animate="fade-up">
+                <span class="card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 3v5M8 3v5M10 3v5" />
+                    <path d="M6 8h4" />
+                    <path d="M8 8v13" />
+                    <path d="M16 21V3c-2 .8-3 3.3-3 6.5S14 15 16 15" />
+                  </svg>
+                </span>
                 <h3>Restaurant Menu</h3>
                 <p>Our full dining menu, available to view or download.</p>
                 <div class="menu-card-actions">
@@ -71,8 +103,16 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4">
               <div class="menu-card" data-animate="fade-up">
+                <span class="card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 18h16" />
+                    <path d="M5 18a7 7 0 0 1 14 0" />
+                    <path d="M12 8V6" />
+                    <circle cx="12" cy="5" r="1" />
+                  </svg>
+                </span>
                 <h3>Room Service Menu</h3>
                 <p>Order to your room &mdash; view or download the menu.</p>
                 <div class="menu-card-actions">
@@ -85,8 +125,14 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4">
               <div class="menu-card" data-animate="fade-up">
+                <span class="card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6" />
+                  </svg>
+                </span>
                 <h3>Ayurvedic Spa Brochure</h3>
                 <p>Explore our Ayurvedic spa treatments &mdash; view or download the brochure.</p>
                 <div class="menu-card-actions">
@@ -105,43 +151,53 @@
 
       <!-- Gallery -->
       <section id="gallery" class="gallery-section">
-        <h2 class="section-heading" data-animate="fade-up">A Glimpse of Parakkat</h2>
-        <div class="container-fluid">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img
-                src="./resort/5984bcea-eb23-4cde-bb90-237052851627.JPG"
-                class="gallery-photo"
-                data-animate="fade-up"
-                loading="lazy"
-                alt="Parakkat Nature Resort treehouse cottage exterior"
-              />
-            </div>
-            <div class="col-md-4">
-              <img
-                src="./resort/2decbb6c-00a1-46c9-aa38-3d626719a02b.JPG"
-                class="gallery-photo"
-                data-animate="fade-up"
-                loading="lazy"
-                alt="Parakkat Nature Resort cave-themed room interior"
-              />
-            </div>
-            <div class="col-md-4">
-              <img
-                src="./resort/25026a06-8f3a-4056-91ab-a9f5d87bd305.JPG"
-                class="gallery-photo"
-                data-animate="fade-up"
-                loading="lazy"
-                alt="Parakkat Nature Resort grotto cottage detail"
-              />
-            </div>
-          </div>
+        <div class="container">
+          <p class="section-eyebrow" data-animate="fade-up">Our Surroundings</p>
+          <h2 class="section-heading" data-animate="fade-up">A Glimpse of Parakkat</h2>
+        </div>
+        <div class="container gallery-grid">
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/2decbb6c-00a1-46c9-aa38-3d626719a02b.JPG" class="gallery-photo" loading="lazy" alt="Cave-themed room interior at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/25026a06-8f3a-4056-91ab-a9f5d87bd305.JPG" class="gallery-photo" loading="lazy" alt="Grotto cottage detail at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/847de9ef-f183-45f7-a6af-cfe2d616dd44.JPG" class="gallery-photo" loading="lazy" alt="Cottage and grounds at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/7d14c9c0-6b36-40ca-928e-8c31ea64316f.JPG" class="gallery-photo" loading="lazy" alt="Natural surroundings at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/dcb95691-dd3d-4200-a753-46eaacb00942.JPG" class="gallery-photo" loading="lazy" alt="Resort architecture at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/b1d134db-e254-4543-8fdd-bbf011d1bab8.JPG" class="gallery-photo" loading="lazy" alt="Scenic view at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/52fcd06e-4a01-4962-9cb3-75c806709e74.JPG" class="gallery-photo" loading="lazy" alt="Landscaped grounds at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/f7825e8c-b53a-4190-9c33-aefed3eba518.JPG" class="gallery-photo" loading="lazy" alt="Guest cottage at Parakkat Nature Resort" />
+          </figure>
+          <figure class="gallery-item" data-animate="fade-up">
+            <img src="./resort/6e79102c-82fc-45ec-a592-bf3ee1663a5e.JPG" class="gallery-photo" loading="lazy" alt="Resort setting at Parakkat Nature Resort" />
+          </figure>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; Parakkat Nature Resort</p>
+      <div class="container footer-inner">
+        <p class="footer-eyebrow">Nature Resort</p>
+        <p class="footer-wordmark">Parakkat</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#menu">Menus</a>
+          <span class="footer-dot" aria-hidden="true">&bull;</span>
+          <a href="#gallery">Gallery</a>
+        </nav>
+        <p class="footer-copy">&copy; Parakkat Nature Resort. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Bootstrap js CDN  -->

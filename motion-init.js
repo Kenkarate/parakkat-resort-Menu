@@ -18,11 +18,11 @@
   }
 
   try {
-    // Hero: logo, then tagline + CTA, staggered entrance
+    // Hero: eyebrow + logo, then tagline + CTA, staggered entrance
     animate(
-      '.hero-logo',
+      '.hero-eyebrow, .hero-logo',
       { opacity: [0, 1], y: [-24, 0] },
-      { duration: 0.7, ease: 'easeOut' }
+      { duration: 0.7, ease: 'easeOut', delay: stagger(0.12) }
     );
     animate(
       '.hero-tagline, .hero-cta',
@@ -46,7 +46,7 @@
 
     // Below-the-fold content: scroll-reveal, once per element
     inView(
-      '.section-heading, .menu-card, .gallery-photo',
+      '.section-eyebrow, .section-heading, .welcome-inner, .menu-card, .gallery-item',
       function (el) {
         if (el.dataset.revealed) return;
         el.dataset.revealed = 'true';
